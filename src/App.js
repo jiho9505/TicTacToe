@@ -47,6 +47,7 @@ export default class App {
             this.datas[i][j] = 0;
         }
     }
+    console.log(this.datas)
   }
   
   setState() {
