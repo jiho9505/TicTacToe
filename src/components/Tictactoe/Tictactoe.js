@@ -14,7 +14,15 @@ export default class Tictactoe {
       this.element = TEMPLATE.content.firstElementChild;
 
       this.onClick = onClick;
-
+      this.element.onclick = (e) => {
+            
+        if(e.target.className === 'Tic__line1Detail' || e.target.className === 'Tic__line1Detail Tic__border' || 
+        e.target.className === 'Tic__line2Detail' || e.target.className === 'Tic__line2Detail Tic__border' ||
+        e.target.className === 'Tic__line3Detail' || e.target.className === 'Tic__line3Detail Tic__border'){ 
+            this.onClick(e.target.dataset.idx,this.value%2+1);
+            
+        } 
+    }
       this.render();
     }
   
@@ -57,15 +65,7 @@ export default class Tictactoe {
             </div>
         `
 
-        this.element.onclick = (e) => {
-            
-            if(e.target.className === 'Tic__line1Detail' || e.target.className === 'Tic__line1Detail Tic__border' || 
-            e.target.className === 'Tic__line2Detail' || e.target.className === 'Tic__line2Detail Tic__border' ||
-            e.target.className === 'Tic__line3Detail' || e.target.className === 'Tic__line3Detail Tic__border'){ 
-                this.onClick(e.target.dataset.idx,this.value%2+1);
-                
-            } 
-      }
+        
     }
   }
 
