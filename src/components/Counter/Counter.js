@@ -10,7 +10,7 @@ export default class Counter {
       const TEMPLATE = document.createElement("template");
       
       TEMPLATE.innerHTML = `
-              <div class='counter__part'>  
+              <div class='counter'>  
               </div>
               `
   

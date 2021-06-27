@@ -15,29 +15,29 @@ body {
     width: 400px;
 }
 
-.verticalSort{
+.whole{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.header__part{
+.header{
     text-align: center;
     width: 1100px;
 }
 
-.header__part hr{
+.header hr{
     border: none;
     border-top: 3px dotted blue;
     
 }
 
-.counter__part{
+.counter{
     text-align: center;
     font-size: 3.0rem;
 }
 
-.Tic__part{
+.Tic{
     margin-top: 30px;
     font-size: 100px;
     width: 100%;
@@ -54,18 +54,9 @@ body {
     height: 33%;
 }
 
-.Tic__line1_detail{
+.Tic__line1Detail{
     width: 33%;
     text-align: center;
-    height: 100%;
-
-}
-
-.Tic__line1_detail_C{
-    width: 33%;
-    text-align: center;
-    border-left: 1px solid blue;
-    border-right: 1px solid blue;
     height: 100%;
 
 }
@@ -79,17 +70,9 @@ body {
     height: 33%;
 }
 
-.Tic__line2_detail{
+.Tic__line2Detail{
     width: 33%;
     text-align: center;
-    height: 100%;
-}
-
-.Tic__line2_detail_C{
-    width: 33%;
-    text-align: center;
-    border-left: 1px solid blue;
-    border-right: 1px solid blue;
     height: 100%;
 }
 
@@ -100,18 +83,15 @@ body {
     height: 33%;
 }
 
-.Tic__line3_detail{
+.Tic__line3Detail{
     width: 33%;
     text-align: center;
     height: 100%;
 }
 
-.Tic__line3_detail_C{
-    width: 33%;
-    text-align: center;
+.Tic__border {
     border-left: 1px solid blue;
     border-right: 1px solid blue;
-    height: 100%;
 }
 
 footer{

@@ -28,7 +28,6 @@ export default class App {
               this.checkBingo();
               this.setState();
            }
-           
         },
         datas: this.datas
     });
@@ -66,6 +65,18 @@ export default class App {
     this.tictactoe.setState(this.datas)
   }
 
+  viewResult(num) {
+    if(num === 1){
+      alert('Game Over, X win !!!')
+      this.isFinish = true;
+      this.score.left += 1;
+    }else{
+      alert('Game Over, O win !!!')
+      this.isFinish = true;
+      this.score.right += 1;
+    }
+  }
+
   checkWhole() {
     let Success = true;
     for(let i = 0; i < 3; i++){
@@ -80,7 +91,6 @@ export default class App {
         alert('Game Over, Draw---')
         return;
     }
-
   }
 
   checkGaro() {
@@ -99,14 +109,10 @@ export default class App {
       if(Success){
         i === 3 ? i = 2 : '';
         if(this.datas[i][0] === 1){
-          alert('Game Over, X win !!!')
-          this.isFinish = true;
-          this.score.left += 1;
+          this.viewResult(1)
           return;
         }else{
-          alert('Game Over, O win !!!')
-          this.isFinish = true;
-          this.score.right += 1;
+          this.viewResult(2)
           return;
         }
       }
@@ -128,14 +134,10 @@ export default class App {
       if(Success){
         j === 3 ? j = 2 : '';
         if(this.datas[0][j] === 1){
-          alert('Game Over, X win !!!')
-          this.isFinish = true;
-          this.score.left += 1;
+          this.viewResult(1)
           return;
         }else{
-          alert('Game Over, O win !!!')
-          this.isFinish = true;
-          this.score.right += 1;
+          this.viewResult(2)
           return;
         }
       }
@@ -152,14 +154,10 @@ export default class App {
     }
     if(Success){
       if(this.datas[0][0] === 1){
-        alert('Game Over, X win !!!')
-        this.isFinish = true;
-        this.score.left += 1;
+        this.viewResult(1)
         return;
       }else{
-        alert('Game Over, O win !!!')
-        this.isFinish = true;
-        this.score.right += 1;
+        this.viewResult(2)
         return;
       }
     }
@@ -174,14 +172,10 @@ export default class App {
     }
     if(Success2){
       if(this.datas[0][2] === 1){
-        alert('Game Over, X win !!!')
-        this.isFinish = true;
-        this.score.left += 1;
+        this.viewResult(1)
         return;
       }else{
-        alert('Game Over, O win !!!')
-        this.isFinish = true;
-        this.score.right += 1;
+        this.viewResult(2)
         return;
       }
     }
