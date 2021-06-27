@@ -27,6 +27,7 @@ export default class App {
               this.tictactoe.value++;
               this.checkBingo();
               this.setState();
+              
            }
         },
         datas: this.datas
@@ -67,13 +68,18 @@ export default class App {
 
   viewResult(num) {
     if(num === 1){
-      alert('Game Over, X win !!!')
-      this.isFinish = true;
       this.score.left += 1;
+      setTimeout(() => {
+        alert('Game Over, X win !!!')
+        this.isFinish = true;
+      }, 500);
+      
     }else{
-      alert('Game Over, O win !!!')
-      this.isFinish = true;
       this.score.right += 1;
+      setTimeout(() => {
+        alert('Game Over, O win !!!')
+        this.isFinish = true;
+      }, 500);   
     }
   }
 
@@ -88,7 +94,9 @@ export default class App {
       }
     }
     if(Success){
-        alert('Game Over, Draw---')
+        setTimeout(() => {
+          alert('Game Over, Draw---')
+        }, 500);   
         return;
     }
   }

@@ -46,7 +46,7 @@ export default class Tictactoe {
                 <div class="Tic__line1Detail" data-idx="02">${newArray[0][2]}</div>
             </div>
             <div class="Tic__line2">
-                <div class="Tic__linDDetail" data-idx="10">${newArray[1][0]}</div>
+                <div class="Tic__line2Detail" data-idx="10">${newArray[1][0]}</div>
                 <div class="Tic__line2Detail Tic__border" data-idx="11">${newArray[1][1]}</div>
                 <div class="Tic__line2Detail" data-idx="12">${newArray[1][2]}</div>
             </div>
