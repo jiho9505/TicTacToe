@@ -1,6 +1,6 @@
 import Counter from './components/Counter/Counter.js'
 import Footer from './components/Footer/Footer.js'
-// import Tictactoe from './components/Tictactoe/Tictactoe.js'
+import Tictactoe from './components/Tictactoe/Tictactoe.js'
 
 export default class App {
   $target = null;
@@ -16,8 +16,13 @@ export default class App {
     this.counter = new Counter(this.score);
     this.counter.attachTo($target)
 
-    // this.tictactoe = new Tictactoe();
-    // this.tictactoe.attachTo($target);
+    this.tictactoe = new Tictactoe({
+        onClick: () => {
+
+        },
+        datas: this.datas
+    });
+    this.tictactoe.attachTo($target);
 
     this.footer = new Footer({
         onClick: (type) => {
@@ -42,17 +47,12 @@ export default class App {
   }
   
   initData() {
-    for(let i = 0; i < 3; i++){
-        for(let j = 0; j < 3; j++){
-            this.datas[i][j] = 0;
-        }
-    }
-    console.log(this.datas)
+    this.datas = this.datas.map(datas => datas.map(data => data = 0));
   }
   
   setState() {
     this.counter.setState(this.score)
-    // this.tictactoe.setState(this.datas)
+    this.tictactoe.setState(this.datas)
   }
 
 }
