@@ -17,8 +17,17 @@ export default class App {
     this.counter.attachTo($target)
 
     this.tictactoe = new Tictactoe({
-        onClick: () => {
-
+        onClick: (idx,value) => {
+           let idxArray = idx.split('');
+           let x = parseInt(idxArray[0],10);
+           let y = parseInt(idxArray[1],10);
+           if(this.datas[x][y] === 0){
+              this.datas[x][y] = value;
+              this.tictactoe.value++;
+              this.setState();
+              this.checkBingo();
+           }
+           
         },
         datas: this.datas
     });
@@ -42,8 +51,9 @@ export default class App {
   }
 
   initCount() {
-    this.score.left = 0
-    this.score.right = 0
+    this.score.left = 0;
+    this.score.right = 0;
+    this.tictactoe.value = 0;
   }
   
   initData() {
@@ -54,5 +64,7 @@ export default class App {
     this.counter.setState(this.score)
     this.tictactoe.setState(this.datas)
   }
+
+ 
 
 }
